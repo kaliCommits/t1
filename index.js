@@ -3,6 +3,8 @@ const app = express();
 const cors = require("cors");
 require('dotenv').config();
 
+const port = process.env.PORT || 4000;
+
 const corsOptions = {
   origin:
     process.env.NODE_ENV === "production"
@@ -22,7 +24,7 @@ app.get("/users",(req,res)=>{
     res.send({data:[{id:1,name:"ramesh"},{id:2,name:"suresh"}]});
 });
 
-app.listen(4000,()=>{
-    console.log("server stated at 4000");
+app.listen(port,()=>{
+    console.log(`server stated at ${port}`);
 });
 
